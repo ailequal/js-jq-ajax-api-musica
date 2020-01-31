@@ -7,6 +7,9 @@ $(document).ready(function() {
       var arrayAlbum = data.response;
       for (var i = 0; i < arrayAlbum.length; i++) {
         var album = arrayAlbum[i];
+        album['img-src'] = album.poster;
+        delete album.poster;
+        console.log(album);
         // handlebars
         var source = $('#template').html();
         var template = Handlebars.compile(source);
@@ -21,3 +24,9 @@ $(document).ready(function() {
   });
 
 });
+
+
+// how to edit an object key??
+// obj = { name: 'Bobo' }
+// obj.somethingElse = obj.name
+// delete obj.name
