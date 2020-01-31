@@ -1,0 +1,72 @@
+/* general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #1E2D3B;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+
+.container {
+    width: 1070px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* main */
+header {
+    width: 100%;
+    height: 70px;
+    background: rgb(46, 58, 70);
+}
+
+header img {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.cds-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.cd {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 200px;
+    height: 360px;
+    margin: 10px 20px;
+    padding: 20px;
+    background: rgb(46, 58, 70);
+    text-align: center;
+}
+
+.cd img {
+    max-width: 100%;
+}
+
+.cd h3 {
+    margin: 20px 0;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.cd span.author {
+    font-size: 20px;
+    color: grey;
+}
+
+.cd span.year {
+    color: grey;
+}
