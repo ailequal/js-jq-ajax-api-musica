@@ -13,8 +13,17 @@
   <body>
 
     <header>
-      <div class="container">
-        <img src="logo.png" alt="logo" />
+      <div class="nav-bar container">
+        <img class="logo" src="logo.png" alt="logo" />
+        <div class="genre">
+          <select>
+            <option value="every">All</option>
+            <option value="jazz">Jazz</option>
+            <option value="metal">Metal</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+          </select>
+        </div>
       </div>
     </header>
 
@@ -24,7 +33,7 @@
 
     <script id="template" type="text/x-handlebars-template">
       <div class="cd">
-        <img src="{{img-src}}" alt="{{title}}">
+        <img src="{{poster}}" alt="{{title}}">
         <h3>{{title}}</h3>
         <span class="author">{{author}}</span>
         <span class="year">{{year}}</span>

@@ -1,15 +1,19 @@
 $(document).ready(function() {
 
+  console.log($('.nav-bar .genre select').val());
+
+  $(document).on('change', '.nav-bar .genre select', function() {
+    console.log($('.nav-bar .genre select').val());
+  });
+
   $.ajax({
     url: "https://flynn.boolean.careers/exercises/api/array/music",
     method: "GET",
     success: function(data, state) {
+      $('.cds-container.container').text('');
       var arrayAlbum = data.response;
       for (var i = 0; i < arrayAlbum.length; i++) {
         var album = arrayAlbum[i];
-        album['img-src'] = album.poster;
-        delete album.poster;
-        console.log(album);
         // handlebars
         var source = $('#template').html();
         var template = Handlebars.compile(source);
