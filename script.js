@@ -37,16 +37,21 @@ $(document).ready(function() {
       method: "GET",
       success: function(data, state) {
         $('.cds-container.container').text('');
-        console.log(data.response);
         var arrayAlbum = data.response;
         for (var i = 0; i < arrayAlbum.length; i++) {
           var album = arrayAlbum[i];
           // handlebars
           var source = $('#template').html();
           var template = Handlebars.compile(source);
-          var context = album;
-          var html = template(context);
-          $('.cds-container.container').append(html);
+          if (album.genre === option) {
+            var context = album;
+            var html = template(context);
+            $('.cds-container.container').append(html);
+          } else if (option === 'all') {
+            var context = album;
+            var html = template(context);
+            $('.cds-container.container').append(html);
+          }
         }
       },
       error: function(request, state, error) {
